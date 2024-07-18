@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.example.myplugin"
+        version="1.0.0">
+    <name>MyPlugin</name>
+    <description>Cordova Plugin with AAR</description>
+    <license>MIT</license>
+    <keywords>cordova, myplugin</keywords>
+    <platform name="android">
+        <source-file src="src/android/com.daon.sdk.nfc-1.1.101.aar" target-dir="libs"/>
+        <framework src="src/android/com.daon.sdk.nfc-1.1.101.aar" custom="true"/>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <!-- Add any necessary permissions or configurations here -->
+        </config-file>
+    </platform>
+    <js-module src="src/www/myplugin.js" name="MyPlugin">
+        <clobbers target="MyPlugin"/>
+    </js-module>
+</plugin>
